@@ -14,7 +14,7 @@ footer: 'Claude Code for Non-Coders'
 
 ## A Practical Guide to Building with Claude Code
 
-March 2026
+Willy Heng | March 2026
 
 ---
 
