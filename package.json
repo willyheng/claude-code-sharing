@@ -1,0 +1,14 @@
+{
+  "name": "claude-code-sharing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marp slide deck for Claude Code sharing session",
+  "scripts": {
+    "dev": "marp slides.md --html --theme-set theme/custom.css -p",
+    "build": "marp slides.md --html --theme-set theme/custom.css -o dist/index.html",
+    "pdf": "marp slides.md --html --theme-set theme/custom.css --pdf -o dist/slides.pdf"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4"
+  }
+}
