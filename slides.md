@@ -10,19 +10,11 @@ footer: 'Claude Code for Non-Coders'
 <!-- _paginate: false -->
 <!-- _footer: '' -->
 
-# Claude Code for Non-Coders
+# Claude Code Without Coding
 
-## Building Usable Tools — Fast
+## A Practical Guide to Building with Claude Code
 
-March 2026 | Internal Sharing Session
-
----
-
-<!-- _class: divider -->
-
-# Objectives
-
-## What you'll leave with today
+March 2026
 
 ---
 
