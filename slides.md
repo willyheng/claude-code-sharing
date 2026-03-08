@@ -109,17 +109,42 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 
 # The Interaction Loop
 
-```
-   You ask for a change
-         ↓
-   Claude proposes edits + commands
-         ↓
-   You run locally
-         ↓
-   Claude helps interpret results
-         ↓
-   Repeat
-```
+<svg viewBox="-35 0 735 400" xmlns="http://www.w3.org/2000/svg" style="width:58%;margin:0 auto;display:block;">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#d4a574"/></marker>
+  </defs>
+  <!-- You prompt → Claude plans (top right) -->
+  <path d="M440,50 Q600,50 600,120" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- Claude plans → You approve plan (right side down) -->
+  <path d="M600,180 Q600,230 600,240" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- You approve plan → Claude builds (bottom right corner) -->
+  <path d="M600,300 Q600,347 530,347" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- Claude builds → You approve code (bottom, right to left) -->
+  <path d="M350,347 Q320,347 290,347" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- You approve code → Claude outputs (bottom left corner) -->
+  <path d="M110,347 Q60,347 60,300" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- Claude outputs → You check (left side up) -->
+  <path d="M60,240 Q60,210 60,180" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- You check → You prompt (top left) -->
+  <path d="M60,120 Q60,50 260,50" fill="none" stroke="#d4a574" stroke-width="2.5" marker-end="url(#ah)"/>
+  <!-- Boxes -->
+  <rect x="260" y="20" width="180" height="55" rx="10" fill="#fef3c7" stroke="#d4a574" stroke-width="2"/>
+  <text x="350" y="42" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">You prompt your</text>
+  <text x="350" y="60" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">requirements</text>
+  <rect x="515" y="125" width="170" height="55" rx="10" fill="#f3f4f6" stroke="#d4a574" stroke-width="2"/>
+  <text x="600" y="147" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">Claude plans</text>
+  <text x="600" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">implementation</text>
+  <rect x="515" y="245" width="170" height="55" rx="10" fill="#fef3c7" stroke="#d4a574" stroke-width="2"/>
+  <text x="600" y="277" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">You approve plan</text>
+  <rect x="350" y="320" width="180" height="55" rx="10" fill="#f3f4f6" stroke="#d4a574" stroke-width="2"/>
+  <text x="440" y="352" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">Claude builds</text>
+  <rect x="110" y="320" width="180" height="55" rx="10" fill="#fef3c7" stroke="#d4a574" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="200" y="352" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">You approve code</text>
+  <rect x="-25" y="245" width="170" height="55" rx="10" fill="#f3f4f6" stroke="#d4a574" stroke-width="2"/>
+  <text x="60" y="277" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">Claude outputs</text>
+  <rect x="-25" y="125" width="170" height="55" rx="10" fill="#fef3c7" stroke="#d4a574" stroke-width="2"/>
+  <text x="60" y="157" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">You check</text>
+</svg>
 
 It's a **conversation**, not a one-shot prompt.
 
