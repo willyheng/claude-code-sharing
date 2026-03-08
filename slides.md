@@ -189,13 +189,13 @@ Revert / discard changes back to last working state if needed.
 
 | Command | What it does |
 |---------|-------------|
-| `pwd` | Print working directory (where am I?) |
 | `ls` | List files in current folder |
 | `cd folder_name` | Change directory (go into a folder) |
 | `cd ..` | Go up one level |
 | `cat file.txt` | Display file contents |
-| `mkdir new_folder` | Create a new folder |
 | `python script.py` | Run a Python script |
+| `Ctrl + C` | Stop a running process |
+| `npm install` / `pip install` | Install packages (JS / Python) |
 
 ---
 
