@@ -84,32 +84,16 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 
 ---
 
-<!-- _class: highlight -->
+# Shifting Development Value Chain
 
-# The Development Value Chain
-
-```
-  User Need  →  Spec  →  Build  →  Test  →  Deploy  →  Iterate
-     👤          📋        🔨        ✅       🚀         🔄
-  (Domain)    (PM/       (Dev)     (QA)    (Ops)
-              Analyst)
-```
-
-### Claude Code primarily accelerates **Build**
-…and supports **Test** by generating checks.
-
-**It does not replace the human roles.**
-
----
-
-# Your Roles Remain Essential
-
-| Role | Responsibility |
-|------|---------------|
-| **User / Domain expert** | Define the need + validate outputs |
-| **PM / Analyst** | Write the spec + success criteria |
-| **QA / Reviewer** | Sanity-check + confirm correctness |
-| **Ops / Owner** | Runbook + keep it usable over time |
+<table>
+<tr><th>Stage</th><th>Human's Role</th><th>Machine's Role</th></tr>
+<tr><td><strong>Problem (User)</strong></td><td style="background:#6ee7b7">Define the problem, own the domain</td><td>—</td></tr>
+<tr><td><strong>Spec (Product Mgr)</strong></td><td style="background:#6ee7b7">Write requirements, set success criteria</td><td>Brainstorm, clarify, draft specs</td></tr>
+<tr><td><strong>Build (Dev)</strong></td><td>Review, guide, approve changes</td><td style="background:#6ee7b7">Write code, create files, run commands</td></tr>
+<tr><td><strong>Test (QA)</strong></td><td style="background:#d1fae5">Sanity-check, validate outputs</td><td style="background:#d1fae5">Generate and run tests</td></tr>
+<tr><td><strong>Deploy (Ops)</strong></td><td style="background:#d1fae5">Own infrastructure, access controls</td><td style="background:#d1fae5">Generate configs, CI/CD scripts</td></tr>
+</table>
 
 > Claude is the **builder**, but you are the **architect, reviewer, and owner**.
 
