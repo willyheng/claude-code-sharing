@@ -163,7 +163,7 @@ For any non-trivial request, expect:
 
 # What You Should Always Check
 
-- Is the **logic of its implementation** sound?
+- Is the **logic of its implementation** sound? Did it pull the **relevant context**?
 - Did it change the **files you expected**?
 - Did it **run successfully**?
 - Do outputs pass basic **sanity checks**?
