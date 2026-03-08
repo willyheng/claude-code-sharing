@@ -72,7 +72,7 @@ $ claude
 
 It's a **conversation in the terminal** — you ask, Claude builds.
 
-> **Demo:** Claude CLI and App interface
+> **Demo:** (i) Claude CLI, (ii) Claude App, (iii) VS Code extension
 
 ---
 
