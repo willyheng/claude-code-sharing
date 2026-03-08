@@ -44,7 +44,7 @@ An **AI coding assistant** you run from your terminal or Claude app.
 - **Access your local context** — read & write files, manage your project
 - **Run commands** (tests, scripts, builds) and show outputs
 - **Navigate and explain code** — "Where/How is X implemented?"
-- **Generate new code** from a description of what you want
+- **Generate code** from a description of what you want
 - **Brainstorm approaches** and **research solutions** from the internet
 
 > All within the permissions and scope you give it.
