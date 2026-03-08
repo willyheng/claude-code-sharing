@@ -153,27 +153,28 @@ It's a **conversation**, not a one-shot prompt.
 
 For any non-trivial request, expect:
 
-1. **A short plan** — what it intends to do
-2. **File changes** — edits and new files with explanations
-3. **A diff summary** — what changed and why
-4. **Commands to run** — install, run, test
+1. **Inputs** — analyse input files (if any)
+2. **An implementation plan** — what it intends to do
+3. **Commands to run** — install, run, test
+4. **File changes** — edits and new files with explanations
 5. **Outputs** — logs, tables, charts + how to interpret them
 
 ---
 
 # What You Should Always Check
 
-- Is the **logic of its implementation** sound? Did it pull the **relevant context**?
-- Did it change the **files you expected**?
-- Did it **run successfully**?
-- Do outputs pass basic **sanity checks**?
-  - Totals, date ranges, units, missing values
+1. Is the **logic of its implementation** sound? Did it pull the **relevant context**?
+2. Did it change the **files you expected**?
+3. Did it **run successfully** and do outputs pass basic **sanity checks**?
+4. Did it **test its code** and **commit (save)** them?
+5. Do you have enough **session/weekly limits** to complete your feature?
 
 ### If something looks wrong:
 
-> Ask: *"Summarise current state, what you changed, and the next smallest fix."*
-
-Revert / discard changes back to last working state if needed.
+1. Press **Esc** to interrupt Claude (if still running)
+2. State your observation of what is wrong or what it should be
+3. Ask: *"Evaluate your observation and if the plan is correct"*
+4. (Get Claude to) Revert / discard changes back to last working state if needed
 
 ---
 
