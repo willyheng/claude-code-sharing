@@ -12,7 +12,7 @@ footer: 'Claude Code for Non-Coders'
 
 # Claude Code Without Coding
 
-## A Practical Guide to Building with Claude Code
+## A Practical Guide to Building Applications
 
 Willy Heng | March 2026
 
