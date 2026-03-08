@@ -38,14 +38,15 @@ Willy Heng | March 2026
 
 # Claude Code — What It Is
 
-An **AI coding assistant** you run from your terminal (CLI).
+An **AI coding assistant** you run from your terminal or Claude app.
 
 ### What it can do:
 - **Read & write files** in your project
 - **Run commands** (tests, scripts, builds) and show outputs
-- **Navigate code** — "Where is X implemented?"
-- **Generate new code** from your description
-- **Access your local context** — folders, files, command execution
+- **Navigate and explain code** — "Where/How is X implemented?"
+- **Generate new code** from your description of either the solution or problem
+- **Access your local context and manage the project** — folders, files, command execution
+- **Bounce ideas** and **search the internet**
 
 > All within the permissions and scope you give it.
 
@@ -70,6 +71,8 @@ $ claude
 ```
 
 It's a **conversation in the terminal** — you ask, Claude builds.
+
+> **Demo:** Claude CLI and App interface
 
 ---
 
