@@ -466,6 +466,14 @@ def test_zero_is_not_positive():
 
 <!-- _class: divider -->
 
+# Peer Sharing
+
+## Share what you built in Hands-on 2
+
+---
+
+<!-- _class: divider -->
+
 # 7. Customising Claude
 
 ## Instructions and tool integrations
@@ -480,8 +488,24 @@ An **instruction file** that guides how Claude behaves in your project. Claude r
 |-------|----------|-------|---------|
 | **Global** | `~/.claude/CLAUDE.md` | Your personal defaults across all projects | "Always write tests, use git and update project CLAUDE.md" |
 | **Local** (repo) | `PROJECT/CLAUDE.md` | Project-specific rules + context (objectives, infrastructure) | "Run with `npm start`, test with `npm test`" |
+| **Project** (context) | `PROJECT/anything.md` | Additional context for specific use cases | "data-dictionary.md", "api-spec.md" |
 
 > Use Claude to help you maintain both global and local CLAUDE.md — tell it to be **succinct** to save tokens.
+
+---
+
+# Claude Memories vs CLAUDE.md
+
+Claude **automatically saves** things it learns from working with you at `~/.claude/projects/<project>/memory/`, and loads them in future sessions.
+
+| | CLAUDE.md | Auto Memory |
+|---|---|---|
+| **Who writes** | You | Claude |
+| **Content** | Instructions and rules | Learnings and patterns |
+| **Scope** | Project or global | Per project, machine-local |
+| **Example** | "Always use uv, run tests" | "User prefers compact table layouts" |
+
+> Better to maintain project CLAUDE.md for more deliberate context management.
 
 ---
 
@@ -530,6 +554,7 @@ Read the CSV file provided. Summarise:
 # Hands-on 3: Build Your Own App
 
 ## Pick a task and work on it
+## Customise global CLAUDE.md and project CLAUDE.md
 
 ---
 
