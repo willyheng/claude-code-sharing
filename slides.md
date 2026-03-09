@@ -34,7 +34,7 @@ Willy Heng | March 2026
 |------|----------|---------|----------------|
 | 10:30 | 20 min | **Intro to Claude Code** | What is Claude Code. |
 | 10:50 | 40 min | **Hands-on 1: Build your first app** | Set up Claude Code and get a first app running. |
-| 11:30 | 15 min | **Infrastructure & Code Maintenance** | Hosting, databases, git and tests basics. |
+| 11:30 | 15 min | **Infrastructure & Code Maintenance** | Frontend/backend, hosting, databases, git and tests basics. |
 | 11:45 | 60 min | **Hands-on 2 + Lunch** | Eat and build. Add tests, git, database and hosting. |
 | 12:45 | 20 min | **Peer Sharing** | Share what you built in Hands-on 2. |
 | 13:05 | 15 min | **Customise Your Workflow** | CLAUDE.md, MCP, and skills. |
@@ -47,7 +47,7 @@ Willy Heng | March 2026
 
 # 1. What is Claude Code?
 
-## The CLI tool and its capabilities
+## The tool and its capabilities
 
 ---
 
@@ -98,6 +98,9 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 | **Sonnet** | Balanced speed and capability | Most everyday work, production tasks |
 | **Haiku** | Fastest, most lightweight | Quick questions, simple edits, well-defined tasks |
 
+- **Session limits** — Usage cap resets every 4 hours. More capable models use limits faster, but often pay for themselves in fewer mistakes.
+- **Context limits** — Claude "remembers" 200k tokens per conversation. Auto-compact summarises older context, but details may be lost.
+
 > **Tip:** For non-coders, Opus is the best choice as it is the most thoughtful about implementation — but it uses limits fastest.
 
 ---
@@ -114,14 +117,18 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 
 <table>
 <tr><th>Stage</th><th>Human's Role</th><th>Machine's Role</th></tr>
-<tr><td><strong>Problem (User)</strong></td><td style="background:#6ee7b7">Define the problem, own the domain</td><td>—</td></tr>
+<tr><td><strong>Problem (User)</strong></td><td style="background:#6ee7b7">Know the domain, define the problem</td><td>—</td></tr>
 <tr><td><strong>Spec (Product Mgr)</strong></td><td style="background:#6ee7b7">Write requirements, set success criteria</td><td>Brainstorm, clarify, draft specs</td></tr>
-<tr><td><strong>Build (Dev)</strong></td><td>Review, guide, approve changes</td><td style="background:#6ee7b7">Write code, create files, run commands</td></tr>
+<tr><td><strong>Build (Dev)</strong></td><td>Review, guide, approve changes*</td><td style="background:#6ee7b7">Write code, create files, run commands</td></tr>
 <tr><td><strong>Test (QA)</strong></td><td style="background:#d1fae5">Sanity-check, validate outputs</td><td style="background:#d1fae5">Generate and run tests</td></tr>
-<tr><td><strong>Deploy (Ops)</strong></td><td style="background:#d1fae5">Own infrastructure, access controls</td><td style="background:#d1fae5">Generate configs, CI/CD scripts</td></tr>
+<tr><td><strong>Deploy (Ops)</strong></td><td style="background:#d1fae5">Own infrastructure, access controls</td><td style="background:#d1fae5">Generate configs, deployment scripts</td></tr>
 </table>
 
+<span style="font-size:0.7em;"><span style="color:#6ee7b7;">⬤</span> Primary owner &nbsp;&nbsp; <span style="color:#d1fae5;">⬤</span> Shared responsibility</span>
+
 > Claude is the **builder**, but you are the **architect, reviewer, and owner**.
+
+<span style="font-size:0.7em;">*Critical for production software, but non-coders can safely trust Claude's judgement for personal tools.</span>
 
 ---
 
@@ -194,8 +201,7 @@ It's a **conversation**, not a one-shot prompt.
 4. Did it **test its code** and **commit (save)** them?
 5. Do you have enough **session/weekly limits** to complete your feature?
 
-### If something looks wrong:
-
+> ### If something looks wrong:
 > 1. Press **Esc** to **interrupt** Claude (if still running)
 > 2. **State your observation** of what is wrong or what it should be
 > 3. Ask Claude to *"**Evaluate** your observation and if the plan is correct"*
@@ -203,7 +209,7 @@ It's a **conversation**, not a one-shot prompt.
 
 ---
 
-# Terminal Survival Kit
+# Terminal Survival Kit (Linux / Mac)
 
 <div style="display:flex;gap:40px;font-size:0.75em;">
 <div>
@@ -329,11 +335,29 @@ data/*.csv     # Sensitive data files
 
 # 5. Infrastructure Basics
 
-## Hosting and storing data
+## Frontend, backend, hosting, and storing data
+
+---
+
+# Frontend vs Backend
+
+Every app has two sides: what users see (**frontend**) and what runs behind the scenes (**backend**).
+
+| | Frontend | Backend |
+|---|---|---|
+| **What it is** | What users see and interact with | The logic, data, and processing behind the scenes |
+| **Languages** | HTML, CSS, JavaScript | Python, Node.js, SQL |
+| **Runs on** | User's browser | Server |
+| **File extensions** | `.html`, `.css`, `.js`, `.tsx` | `.py`, `.js`, `.sql`, `.env` |
+| **Components** | Buttons, forms, charts, layouts | APIs, databases, calculations, authentication |
+
+> Claude will often build **frontend-only** apps — good for simple tools, but **limited in functionality**. If you plan to build a more complex app, **discuss with Claude during planning** so it can suggest the right architecture.
 
 ---
 
 # Local vs Server Hosting
+
+Once your app is built, you need somewhere to **run** it. That's hosting.
 
 ### Local hosting
 - Run on your laptop (e.g., `localhost:3000`)
@@ -343,13 +367,12 @@ data/*.csv     # Sensitive data files
 ### Server hosting
 - Run on an external service (e.g., `abc-123.vercel.app`)
 - Others can access it (links, auth, network controls)
-- Needed for sharing with users
 
 > Claude can deploy locally for you, and guide you through server hosting setup.
 
 ---
 
-# Claude-hosted Apps
+# Claude Cloud-hosted Apps
 
 ### Built through the Claude web or desktop app.
 
@@ -361,7 +384,7 @@ data/*.csv     # Sensitive data files
 
 ---
 
-# Free-ish Starter Options
+# Free-ish Starter Hosting Options
 
 These are free-tier friendly. Good for learning, personal tools and prototypes.
 
@@ -413,8 +436,8 @@ Tests **automatically check** that your app works as expected — and that **fut
 
 ### Example: a test catching a bug
 
-<div style="display:flex;gap:30px;font-size:0.7em;">
-<div>
+<div style="display:flex;gap:20px;width:100%;">
+<div style="flex:1;">
 
 **Buggy code:**
 ```python
@@ -423,7 +446,7 @@ def is_positive(n):
 ```
 
 </div>
-<div>
+<div style="flex:1;">
 
 **Test that catches it:**
 ```python
@@ -443,8 +466,9 @@ def test_zero_is_not_positive():
 3. **Run tests before committing** — catch problems early
 4. **Watch out** — Claude may ignore failing tests if it thinks they're unrelated to its edits
 
-> You don't need to write tests by hand — Claude Code can generate them for you.
+> Claude Code can generate tests for you, but need to pay extra human attention to mission critical functions.
 
+**Sample prompt:**
 ```
 > Add tests (including edge cases) for what you built
 ```
