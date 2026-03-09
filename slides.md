@@ -98,7 +98,7 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 | **Sonnet** | Balanced speed and capability | Most everyday work, production tasks |
 | **Haiku** | Fastest, most lightweight | Quick questions, simple edits, well-defined tasks |
 
-- **Session limits** — Usage cap resets every 4 hours. More capable models use limits faster, but often pay for themselves in fewer mistakes.
+- **Session limits** — Usage cap resets every 5 hours. More capable models use limits faster, but often pay for themselves in fewer mistakes.
 - **Context limits** — Claude "remembers" 200k tokens per conversation. Auto-compact summarises older context, but details may be lost.
 
 > **Tip:** For non-coders, Opus is the best choice as it is the most thoughtful about implementation — but it uses limits fastest.
