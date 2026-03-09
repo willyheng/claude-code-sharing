@@ -205,7 +205,7 @@ It's a **conversation**, not a one-shot prompt.
 > 1. Press **Esc** to **interrupt** Claude (if still running)
 > 2. **State your observation** of what is wrong or what it should be
 > 3. Ask Claude to *"**Evaluate** your observation and if the plan is correct"*
-> 4. (Get Claude to) **Revert / discard changes** back to last working state if needed
+> 4. (Get Claude to) **Discard changes / revert** to last working state if needed
 
 ---
 
@@ -384,7 +384,7 @@ Once your app is built, you need somewhere to **run** it. That's hosting.
 
 ---
 
-# Free-ish Starter Hosting Options
+# Free-ish Hosting Options
 
 These are free-tier friendly. Good for learning, personal tools and prototypes.
 
