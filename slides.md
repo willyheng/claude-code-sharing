@@ -178,8 +178,6 @@ It's a **conversation**, not a one-shot prompt.
 
 # What Claude Produces
 
-For any non-trivial request, expect:
-
 1. **Inputs** — analyse input files (if any)
 2. **An implementation plan** — what it intends to do
 3. **Commands to run** — install, run, test
