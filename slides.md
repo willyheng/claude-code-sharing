@@ -28,6 +28,21 @@ Willy Heng | March 2026
 
 ---
 
+# Agenda
+
+| Time | Duration | Segment | Key Activities |
+|------|----------|---------|----------------|
+| 10:30 | 20 min | **Intro to Claude Code** | What is Claude Code. |
+| 10:50 | 40 min | **Hands-on 1: Build your first app** | Set up Claude Code and get a first app running. |
+| 11:30 | 15 min | **Infrastructure & Code Maintenance** | Hosting, databases, git and tests basics. |
+| 11:45 | 60 min | **Hands-on 2 + Lunch** | Eat and build. Add tests, git, database and hosting. |
+| 12:45 | 20 min | **Peer Sharing** | Share what you built in Hands-on 2. |
+| 13:05 | 15 min | **Customise Your Workflow** | CLAUDE.md, MCP, and skills. |
+| 13:20 | 30 min | **Hands-on 3: Build your own app** | Pick a task and work on it. |
+| 13:50 | 10 min | **Closing** | Key takeaways and Q&A. |
+
+---
+
 <!-- _class: divider -->
 
 # 1. What is Claude Code?
@@ -231,63 +246,19 @@ For any non-trivial request, expect:
 
 <!-- _class: divider -->
 
-# 4. Infrastructure Basics
+# Hands-on 1: Build Your First App
 
-## Hosting and storing data
+## Set up Claude Code and create a new project
+## Build a dashboard for a 60/40 portfolio
+## Use only Claude — no Googling
 
----
-
-# Local vs Server Hosting
-
-### Local hosting
-- Run on your laptop (e.g., `localhost:3000`)
-- Fast testing, no setup needed
-- Only you can see it
-
-### Server hosting
-- Run on an external service
-- Others can access it (links, auth, network controls)
-- Needed for sharing with users
-
-> Claude can deploy locally for you, and guide you through server hosting setup.
-
----
-
-# Free-ish Starter Options
-
-These are free-tier friendly. Good for learning, personal tools and prototypes.
-
-| Service | Best for |
-|---------|---------|
-| **Vercel** | Web apps (React, Next.js) |
-| **Netlify** | Static sites + simple web apps |
-| **Cloudflare Pages** | Static sites + edge functions |
-| **Render / Railway** | Simple app hosting (backend) |
-| **GitHub Pages** | Static sites (free with GitHub) |
-
-> Claude can recommend the best option based on your project's requirements.
-
----
-
-# Local vs Server Databases
-
-### Local — Simplest way to store data, runs on your laptop.
-- **SQLite** — single file database, no setup needed (⭐ best for simple projects)
-- **Local Postgres** — full database as a service on your machine
-- **CSV** — spreadsheet-like data in a plain text file (⚠ not scalable)
-- **JSON** — structured data format, common for APIs and configs
-
-### Server — Shared data for multi-user / server-hosted apps.
-- **Supabase** — hosted Postgres + auth (generous free tier)
-- **Managed Postgres/MySQL** — cloud-hosted by AWS, GCP, etc.
-
-> Start with SQLite — upgrade to server when you need shared access.
+> For today's session, use Opus to build a project base, then switch to Sonnet to stay within limits for the training.
 
 ---
 
 <!-- _class: divider -->
 
-# 5. Version Control Basics
+# 4. Version Control Basics
 
 ## Git & GitHub
 
@@ -358,6 +329,74 @@ data/*.csv     # Sensitive data files
 
 <!-- _class: divider -->
 
+# 5. Infrastructure Basics
+
+## Hosting and storing data
+
+---
+
+# Local vs Server Hosting
+
+### Local hosting
+- Run on your laptop (e.g., `localhost:3000`)
+- Fast testing, no setup needed
+- Only you can see it
+
+### Server hosting
+- Run on an external service
+- Others can access it (links, auth, network controls)
+- Needed for sharing with users
+
+> Claude can deploy locally for you, and guide you through server hosting setup.
+
+---
+
+# Claude-hosted Apps
+
+### Built through the Claude web or desktop app.
+
+- Apps run as **interactive artifacts**, shareable via link
+- No setup needed, but limited control over files and hosting
+- No persistent storage or external integrations
+
+> Good for one-shot analysis, not good for development.
+
+---
+
+# Free-ish Starter Options
+
+These are free-tier friendly. Good for learning, personal tools and prototypes.
+
+| Service | Best for |
+|---------|---------|
+| **Vercel** | Web apps (React, Next.js) |
+| **Netlify** | Static sites + simple web apps |
+| **Cloudflare Pages** | Static sites + edge functions |
+| **Render / Railway** | Simple app hosting (backend) |
+| **GitHub Pages** | Static sites (free with GitHub) |
+
+> Claude can recommend the best option based on your project's requirements.
+
+---
+
+# Local vs Server Databases
+
+### Local — Simplest way to store data, runs on your laptop.
+- **SQLite** — single file database, no setup needed (⭐ best for simple projects)
+- **Local Postgres** — full database as a service on your machine
+- **CSV** — spreadsheet-like data in a plain text file (⚠ not scalable)
+- **JSON** — structured data format, common for APIs and configs
+
+### Server — Shared data for multi-user / server-hosted apps.
+- **Supabase** — hosted Postgres + auth (generous free tier)
+- **Managed Postgres/MySQL** — cloud-hosted by AWS, GCP, etc.
+
+> Start with SQLite — upgrade to server when you need shared access.
+
+---
+
+<!-- _class: divider -->
+
 # 6. Testing Basics
 
 ## Why test and how
@@ -411,6 +450,17 @@ def test_zero_is_not_positive():
 ```
 > Add tests (including edge cases) for what you built
 ```
+
+---
+
+<!-- _class: divider -->
+
+# Hands-on 2: Level Up Your App
+
+## Lunch is served — eat and build
+## Add tests and git
+## Store data in a database
+## Host your app
 
 ---
 
@@ -472,6 +522,14 @@ Read the CSV file provided. Summarise:
 ```
 
 > You can create your own skills or install community ones from GitHub.
+
+---
+
+<!-- _class: divider -->
+
+# Hands-on 3: Build Your Own App
+
+## Pick a task and work on it
 
 ---
 
