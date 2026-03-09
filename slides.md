@@ -341,7 +341,7 @@ data/*.csv     # Sensitive data files
 - Only you can see it
 
 ### Server hosting
-- Run on an external service
+- Run on an external service (e.g., `abc-123.vercel.app`)
 - Others can access it (links, auth, network controls)
 - Needed for sharing with users
 
@@ -353,7 +353,7 @@ data/*.csv     # Sensitive data files
 
 ### Built through the Claude web or desktop app.
 
-- Apps run as **interactive artifacts**, shareable via link
+- Apps run as **interactive artifacts**, shareable via link (e.g., `claude.site/artifacts/abc-123`)
 - No setup needed, but limited control over files and hosting
 - No persistent storage or external integrations
 
