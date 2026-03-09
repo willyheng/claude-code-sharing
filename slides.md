@@ -231,7 +231,63 @@ For any non-trivial request, expect:
 
 <!-- _class: divider -->
 
-# 4. Version Control Basics
+# 4. Infrastructure Basics
+
+## Hosting and storing data
+
+---
+
+# Local vs Server Hosting
+
+### Local hosting
+- Run on your laptop (e.g., `localhost:3000`)
+- Fast testing, no setup needed
+- Only you can see it
+
+### Server hosting
+- Run on an external service
+- Others can access it (links, auth, network controls)
+- Needed for sharing with users
+
+> Claude can deploy locally for you, and guide you through server hosting setup.
+
+---
+
+# Free-ish Starter Options
+
+These are free-tier friendly. Good for learning, personal tools and prototypes.
+
+| Service | Best for |
+|---------|---------|
+| **Vercel** | Web apps (React, Next.js) |
+| **Netlify** | Static sites + simple web apps |
+| **Cloudflare Pages** | Static sites + edge functions |
+| **Render / Railway** | Simple app hosting (backend) |
+| **GitHub Pages** | Static sites (free with GitHub) |
+
+> Claude can recommend the best option based on your project's requirements.
+
+---
+
+# Local vs Server Databases
+
+### Local — Simplest way to store data, runs on your laptop.
+- **SQLite** — single file database, no setup needed (⭐ best for simple projects)
+- **Local Postgres** — full database as a service on your machine
+- **CSV** — spreadsheet-like data in a plain text file (⚠ not scalable)
+- **JSON** — structured data format, common for APIs and configs
+
+### Server — Shared data for multi-user / server-hosted apps.
+- **Supabase** — hosted Postgres + auth (generous free tier)
+- **Managed Postgres/MySQL** — cloud-hosted by AWS, GCP, etc.
+
+> Start with SQLite — upgrade to server when you need shared access.
+
+---
+
+<!-- _class: divider -->
+
+# 5. Version Control Basics
 
 ## Git & GitHub
 
@@ -297,62 +353,6 @@ data/*.csv     # Sensitive data files
 ```
 
 </div>
-
----
-
-<!-- _class: divider -->
-
-# 5. Infrastructure Basics
-
-## Hosting and storing data
-
----
-
-# Local vs Server Hosting
-
-### Local hosting
-- Run on your laptop (e.g., `localhost:3000`)
-- Fast testing, no setup needed
-- Only you can see it
-
-### Server hosting
-- Run on an external service
-- Others can access it (links, auth, network controls)
-- Needed for sharing with users
-
-> Claude can deploy locally for you, and guide you through server hosting setup.
-
----
-
-# Free-ish Starter Options
-
-These are free-tier friendly. Good for learning, personal tools and prototypes.
-
-| Service | Best for |
-|---------|---------|
-| **Vercel** | Web apps (React, Next.js) |
-| **Netlify** | Static sites + simple web apps |
-| **Cloudflare Pages** | Static sites + edge functions |
-| **Render / Railway** | Simple app hosting (backend) |
-| **GitHub Pages** | Static sites (free with GitHub) |
-
-> Claude can recommend the best option based on your project's requirements.
-
----
-
-# Local vs Server Databases
-
-### Local — Simplest way to store data, runs on your laptop.
-- **SQLite** — single file database, no setup needed (⭐ best for simple projects)
-- **Local Postgres** — full database as a service on your machine
-- **CSV** — spreadsheet-like data in a plain text file (⚠ not scalable)
-- **JSON** — structured data format, common for APIs and configs
-
-### Server — Shared data for multi-user / server-hosted apps.
-- **Supabase** — hosted Postgres + auth (generous free tier)
-- **Managed Postgres/MySQL** — cloud-hosted by AWS, GCP, etc.
-
-> Start with SQLite — upgrade to server when you need shared access.
 
 ---
 
