@@ -30,6 +30,9 @@ jobs:
       - name: Build slides
         run: npx @marp-team/marp-cli slides.md --html --theme-set theme/custom.css -o dist/index.html
 
+      - name: Build FTIG slides
+        run: npx @marp-team/marp-cli slides-ftig.md --html --theme-set theme/custom.css -o dist/ftig.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

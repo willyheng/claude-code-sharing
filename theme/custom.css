@@ -179,6 +179,11 @@ section.invert code {
   color: #fbbf24;
 }
 
+/* Small text slide */
+section.small {
+  font-size: 22px;
+}
+
 /* Footer/page numbers */
 section::after {
   font-size: 14px;

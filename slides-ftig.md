@@ -14,7 +14,8 @@ footer: 'Claude Code Without Coding'
 
 ## A Practical Guide to Building Applications
 
-Willy Heng | March 2026
+FTIG Hackathon
+Willy Heng | April 2026
 
 ---
 
@@ -90,6 +91,8 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 
 ---
 
+<!-- _class: small -->
+
 # Claude Models — Which to Use
 
 | Model | Strengths | Best for |
@@ -99,7 +102,8 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 | **Haiku** | Fastest, most lightweight | Quick questions, simple edits, well-defined tasks |
 
 - **Session limits** — Usage cap resets every 5 hours. More capable models use limits faster, but often pay for themselves in fewer mistakes.
-- **Context limits** — Claude "remembers" 200k tokens per conversation. Auto-compact summarises older context, but details may be lost.
+- **Context limits** — Claude "remembers" up to 1M tokens per conversation. Auto-compact summarises older context, but details may be lost.
+- **Continuing conversations** — Resuming a previous session re-ingests the entire conversation history, consuming significant tokens. Prefer starting fresh when possible — a new session can quickly understand a well-maintained project.
 
 > **Tip:** For non-coders, Opus is the best choice as it is the most thoughtful about implementation — but it uses limits fastest.
 
@@ -128,7 +132,7 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 
 > Claude is the **builder**, but you are the **architect, reviewer, and owner**.
 
-<span style="font-size:0.7em;">*Critical for production software, but non-coders can safely trust Claude's judgement for personal tools.</span>
+<span style="font-size:0.7em;">*Critical for production software, but non-coders can usually trust Claude's judgement on code implementation for personal tools.</span>
 
 ---
 
@@ -291,11 +295,19 @@ $ claude
 
 # Hands-on 1: Build Your First App
 
-## Set up Claude Code and create a new project
-## Build a dashboard for a 60/40 portfolio
-## Use only Claude — no Googling
+<div style="text-align:left;width:80%;margin:0 auto;">
 
-> For today's session, use Opus to build a project base, then switch to Sonnet to stay within limits for the training.
+- Get in groups of 2 or 3
+- Set up Claude Code and create a new project
+- Build a website dashboard — pick one:
+  1. Meetings and engagements tracker
+  2. Industry landscape mapper of Fintech sectors in Singapore
+  3. Jurisdiction comparison for a topic (e.g. stablecoin regulation)
+- Use only Claude — no Googling
+
+</div>
+
+> ⚠️ For today's session, use Opus to build a project base, then switch to Sonnet to stay within limits for the training.
 
 ---
 
@@ -463,6 +475,8 @@ These are free-tier friendly. Good for learning, personal tools and prototypes.
 
 ---
 
+<!-- _class: small -->
+
 # Why Test?
 
 Tests **automatically check** that your app works as expected — and that **future changes don't break it**.
@@ -472,6 +486,7 @@ Tests **automatically check** that your app works as expected — and that **fut
 | **Unit** | Does each piece work? |
 | **Integration** | Do they work together? |
 | **End-to-end (E2E)** | Does the whole thing work, starting from user interaction? |
+| **Regression** | Ensure bug fixes remain fixed |
 
 ### Example: a test catching a bug
 
@@ -501,7 +516,7 @@ def test_zero_is_not_positive():
 # Practical Testing Habits
 
 1. **Build tests for new features** — including edge cases
-2. **When fixing a bug** — add a test before or after to prevent recurrence
+2. **When fixing a bug** — add a regression test to prevent recurrence
 3. **Run tests before committing** — catch problems early
 4. **Watch out** — Claude may ignore failing tests if it thinks they're unrelated to its edits
 
@@ -570,6 +585,8 @@ Claude **automatically saves** things it learns from working with you at `~/.cla
 
 ---
 
+<!-- _class: small -->
+
 # MCP — Model Context Protocol
 
 MCP lets Claude **connect to external tools and services** — like Slack, databases, or APIs.
@@ -580,6 +597,7 @@ MCP lets Claude **connect to external tools and services** — like Slack, datab
 
 ### Examples
 
+- **Playwright** — enable Claude to surf the web in a browser like a human
 - **OneNote / Notion** — search and reference your notes
 - **Slack** — read and send messages
 - **Databases** — query live data directly
