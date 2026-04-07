@@ -87,7 +87,7 @@ $ claude
 
 It's a **conversation in the terminal** — you ask, Claude builds.
 
-> **Demo:** (i) Claude CLI, (ii) Claude App, (iii) VS Code extension
+> **Demo:** (i) Claude Command Line Interface (CLI), (ii) Claude App, (iii) VS Code extension
 
 ---
 
@@ -102,7 +102,7 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 | **Haiku** | Fastest, most lightweight | Quick questions, simple edits, well-defined tasks |
 
 - **Session limits** — Usage cap resets every 5 hours. More capable models use limits faster, but often pay for themselves in fewer mistakes.
-- **Context limits** — Claude "remembers" up to 1M tokens per conversation. Auto-compact summarises older context, but details may be lost.
+- **Context limits** — Claude "remembers" up to 1M tokens per conversation. Auto-compact summarises older context, but details may be lost. Recommend Pro users to stick to 200k context model.
 - **Continuing conversations** — Resuming a previous session re-ingests the entire conversation history, consuming significant tokens. Prefer starting fresh when possible — a new session can quickly understand a well-maintained project.
 
 > **Tip:** For non-coders, Opus is the best choice as it is the most thoughtful about implementation — but it uses limits fastest.
@@ -238,8 +238,8 @@ It's a **conversation**, not a one-shot prompt.
 
 | Command | What it does |
 |---------|-------------|
-| `rm -rf *` | **⚠ Delete everything — watch out!** |
-| `rm file.txt` | Delete a file |
+| `rm -rf *` / `rd /s /q *` | **⚠ Delete everything — watch out!** |
+| `rm file.txt` / `del file.txt` | Delete a file |
 | `mv old new` | Rename or move a file |
 | `grep "text" file` | Search for text in files |
 | `curl` | Fetch data from URLs / APIs |
@@ -291,6 +291,18 @@ $ claude
 
 ---
 
+# Claude Code (Local) vs Claude API
+
+| | Claude Code (local) | Claude API |
+|---|---|---|
+| **Cost** | Pro/Max subscription | Pay per token |
+| **Access** | Terminal / desktop app | ⚠️ Requires an API key. Programmatic via code |
+| **What it does** | Builds apps, manages files, runs commands | Processes requests in your app |
+
+> **Tip:** API is useful for webpage interactive LLM access, and Claude likes to build it — but it requires an API key and is paid separately. If you see Claude building an API access, interrupt and ask Claude to `"Research/Search directly"`.
+
+---
+
 <!-- _class: divider -->
 
 # Hands-on 1: Build Your First App
@@ -302,12 +314,14 @@ $ claude
 - Build a website dashboard — pick one:
   1. Meetings and engagements tracker
   2. Industry landscape mapper of Fintech sectors in Singapore
-  3. Jurisdiction comparison for a topic (e.g. stablecoin regulation)
-- Use only Claude — no Googling
+  3. Robo advisor: recommends portfolios based on risk preferences
+  4. Jurisdiction comparison for a topic (e.g. stablecoin regulation)
+- Use only Claude — no Googling. Let Claude do the research for you
 
 </div>
 
-> ⚠️ For today's session, use Opus to build a project base, then switch to Sonnet to stay within limits for the training.
+> ⚠️ For today's session, use Sonnet to stay within limits.
+> If you see Claude building an "API" or requiring an "API_KEY", interrupt it and tell it to research directly.
 
 ---
 
@@ -320,6 +334,8 @@ $ claude
 ---
 
 # Git & GitHub — What They Are
+
+Think of it as "Previous version" in DMS.
 
 ### Local
 **Git** = a manual **"Save"** button (like in Microsoft Word), where you attach notes about your edits.
@@ -359,7 +375,7 @@ $ claude
 
 # Practical Git Tips
 
-- Tell Claude to use a **private repo** for work-related code
+- Tell Claude to use a **private repo** in GitHub for work-related code
 - Remind Claude to **commit and push** after each feature
 - For simplicity, tell Claude to **work on** `main` **branch** (branching is a pro feature)
 - **Never commit sensitive data** (API/secret keys, passwords, `.env` files, sensitive CSVs)
@@ -529,6 +545,22 @@ def test_zero_is_not_positive():
 
 ---
 
+<!-- _class: small -->
+
+# Non-Coder's Debugging Guide
+
+| Situation | Sample prompt |
+|-----------|--------------|
+| Unsure if what was built is correct | `"Check if this is correct"` / `"Research for ways to fix"` |
+| Think there may be a better method | `"Evaluate this method... [describe your method]"` |
+| Website not working | `"Website is not loading"` / `"Use browser to check..."` |
+| Visuals look weird or unexpected | `[Paste screenshot]` |
+| Something that was working is now broken | `"It was working previously, but now it isn't. Revert to the previous please"` |
+| Claude has hung | `[Interrupt]` `"Are you ok"` |
+| Deleted your database | `"YOU DID WHAT??!!"` / `"Please add to global CLAUDE.md to never do it again"` |
+
+---
+
 <!-- _class: divider -->
 
 # Hands-on 2: Level Up Your App
@@ -563,7 +595,7 @@ An **instruction file** that guides how Claude behaves in your project. Claude r
 | Level | Location | Scope | Example |
 |-------|----------|-------|---------|
 | **Global** | `~/.claude/CLAUDE.md` | Your personal defaults across all projects | "Always write tests, use git and update project CLAUDE.md" |
-| **Local** (repo) | `PROJECT/CLAUDE.md` | Project-specific rules + context (objectives, infrastructure) | "Run with `npm start`, test with `npm test`" |
+| **Local** (repo) | `PROJECT/CLAUDE.md` | Project-specific rules + context (objectives, infrastructure) <br>⭐ Always use | "Run with `npm start`, test with `npm test`" |
 | **Project** (context) | `PROJECT/anything.md` | Additional context for specific use cases | "data-dictionary.md", "api-spec.md" |
 
 > Use Claude to help you maintain both global and local CLAUDE.md — tell it to be **succinct** to save tokens.
@@ -597,7 +629,7 @@ MCP lets Claude **connect to external tools and services** — like Slack, datab
 
 ### Examples
 
-- **Playwright** — enable Claude to surf the web in a browser like a human
+- ⭐ **Playwright** — enable Claude to surf the web in a browser like a human
 - **OneNote / Notion** — search and reference your notes
 - **Slack** — read and send messages
 - **Databases** — query live data directly
