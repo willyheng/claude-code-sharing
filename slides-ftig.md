@@ -103,7 +103,7 @@ It's a **conversation in the terminal** — you ask, Claude builds.
 
 - **Session limits** — Usage cap resets every 5 hours. More capable models use limits faster, but often pay for themselves in fewer mistakes.
 - **Context limits** — Claude "remembers" up to 1M tokens per conversation. Auto-compact summarises older context, but details may be lost. Recommend Pro users to stick to 200k context model.
-- **Continuing conversations** — Resuming a previous session re-ingests the entire conversation history, consuming significant tokens. Prefer starting fresh when possible — a new session can quickly understand a well-maintained project.
+- **Continuing conversations** — Resuming re-ingests entire history, consuming significant tokens. Start fresh when possible — Claude quickly understands a well-maintained project.
 
 > **Tip:** For non-coders, Opus is the best choice as it is the most thoughtful about implementation — but it uses limits fastest.
 
